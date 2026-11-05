@@ -61,6 +61,8 @@ img { max-width: 100%; display: block; }
 .site-header.scrolled { background: rgba(22,50,79,.98); box-shadow: 0 4px 20px rgba(0,0,0,.35); }
 .nav-wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+.logo-img { height: 46px; width: auto; object-fit: contain; }
+.footer-logo { height: 54px; }
 .logo-badge {
   background: var(--blue); color: var(--yellow);
   font-family: 'Archivo Black', sans-serif;
@@ -203,13 +205,13 @@ img { max-width: 100%; display: block; }
   flex: 0 0 min(78%, 520px); scroll-snap-align: center;
   border-radius: 20px; overflow: hidden; position: relative;
   box-shadow: 0 16px 40px rgba(0,0,0,.45);
+  background: var(--navy);
 }
-.promo-slide img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.promo-slide img { width: 100%; height: auto; display: block; }
 .promo-slide figcaption {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,.85));
-  padding: 40px 20px 16px;
-  font-family: 'Archivo Black', sans-serif; font-size: 1.1rem; color: #fff;
+  padding: 14px 18px; text-align: center;
+  font-family: 'Archivo Black', sans-serif; font-size: 1rem; color: #fff;
+  background: var(--navy);
 }
 .carousel-arrow {
   position: absolute; top: 42%; transform: translateY(-50%); z-index: 5;
