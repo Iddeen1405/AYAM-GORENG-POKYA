@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <rect width="600" height="400" fill="#FFF6E9"/>
+  <rect width="600" height="400" fill="#F4F8FE"/>
   <!-- meal spread -->
   <ellipse cx="300" cy="310" rx="240" ry="80" fill="#fff"/>
-  <ellipse cx="300" cy="310" rx="240" ry="80" fill="none" stroke="#E8D9C0" stroke-width="4"/>
+  <ellipse cx="300" cy="310" rx="240" ry="80" fill="none" stroke="#C7D8F0" stroke-width="4"/>
   <ellipse cx="200" cy="290" rx="60" ry="45" fill="#FFC53D"/>
   <ellipse cx="200" cy="290" rx="60" ry="45" fill="none" stroke="#C97B12" stroke-width="5"/>
   <ellipse cx="400" cy="300" rx="65" ry="48" fill="#FFC53D"/>
   <ellipse cx="400" cy="300" rx="65" ry="48" fill="none" stroke="#C97B12" stroke-width="5"/>
   <ellipse cx="300" cy="340" rx="80" ry="30" fill="#F4E3C1"/>
-  <text x="300" y="80" text-anchor="middle" font-family="Arial Black" font-size="26" fill="#1A1A1A">COMBO MEAL SET</text>
+  <text x="300" y="80" text-anchor="middle" font-family="Arial Black" font-size="26" fill="#16324F">COMBO MEAL SET</text>
 </svg>

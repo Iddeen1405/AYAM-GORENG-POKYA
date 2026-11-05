@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <defs><radialGradient id="g1" cx="50%" cy="40%" r="75%"><stop offset="0%" stop-color="#FFE9B8"/><stop offset="100%" stop-color="#F5B942"/></radialGradient></defs>
+  <defs><radialGradient id="g1" cx="50%" cy="40%" r="75%"><stop offset="0%" stop-color="#D9E5FA"/><stop offset="100%" stop-color="#D9E5FA"/></radialGradient></defs>
   <rect width="600" height="400" fill="url(#g1)"/>
-  <ellipse cx="300" cy="330" rx="220" ry="40" fill="#1A1A1A" opacity=".12"/>
+  <ellipse cx="300" cy="330" rx="220" ry="40" fill="#16324F" opacity=".12"/>
   <ellipse cx="300" cy="310" rx="190" ry="60" fill="#fff"/>
-  <ellipse cx="300" cy="310" rx="190" ry="60" fill="none" stroke="#E8D9C0" stroke-width="4"/>
+  <ellipse cx="300" cy="310" rx="190" ry="60" fill="none" stroke="#C7D8F0" stroke-width="4"/>
   <ellipse cx="235" cy="280" rx="70" ry="52" fill="#FFC53D"/>
   <ellipse cx="235" cy="280" rx="70" ry="52" fill="none" stroke="#C97B12" stroke-width="5"/>
   <path d="M195 258 q40-24 80 0 M192 282 q42-26 84 0" stroke="#C97B12" stroke-width="4" fill="none" stroke-linecap="round"/>
   <ellipse cx="390" cy="300" rx="80" ry="58" fill="#FFC53D"/>
   <ellipse cx="390" cy="300" rx="80" ry="58" fill="none" stroke="#C97B12" stroke-width="5"/>
   <path d="M348 278 q42-24 84 0 M344 302 q44-26 88 0" stroke="#C97B12" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <text x="300" y="80" text-anchor="middle" font-family="Arial Black" font-size="26" fill="#1A1A1A">CLOSE-UP CRISPY SKIN</text>
+  <text x="300" y="80" text-anchor="middle" font-family="Arial Black" font-size="26" fill="#16324F">CLOSE-UP CRISPY SKIN</text>
 </svg>

@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
   <defs>
     <radialGradient id="bg" cx="50%" cy="30%" r="80%">
-      <stop offset="0%" stop-color="#FFF3D6"/><stop offset="100%" stop-color="#FFD98A"/>
+      <stop offset="0%" stop-color="#EAF2FC"/><stop offset="100%" stop-color="#FFD98A"/>
     </radialGradient>
     <linearGradient id="ch" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#FFC53D"/><stop offset="100%" stop-color="#E8960C"/>
     </linearGradient>
   </defs>
   <rect width="800" height="500" fill="url(#bg)"/>
-  <ellipse cx="400" cy="430" rx="300" ry="46" fill="#1A1A1A" opacity=".12"/>
+  <ellipse cx="400" cy="430" rx="300" ry="46" fill="#16324F" opacity=".12"/>
   <ellipse cx="400" cy="410" rx="270" ry="80" fill="#fff"/>
-  <ellipse cx="400" cy="410" rx="270" ry="80" fill="none" stroke="#E8D9C0" stroke-width="4"/>
+  <ellipse cx="400" cy="410" rx="270" ry="80" fill="none" stroke="#C7D8F0" stroke-width="4"/>
   <!-- drumstick -->
   <g transform="rotate(-14 300 330)">
     <ellipse cx="300" cy="330" rx="85" ry="62" fill="url(#ch)"/>
@@ -28,6 +28,6 @@
   </g>
   <!-- crispy bits -->
   <circle cx="380" cy="395" r="14" fill="#E8960C"/><circle cx="440" cy="405" r="10" fill="#C97B12"/>
-  <text x="400" y="70" text-anchor="middle" font-family="Arial Black,Arial" font-size="44" fill="#1A1A1A">AYAM GORENG</text>
-  <text x="400" y="110" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#D7263D">POKYA — KOTA BHARU ORIGINAL</text>
+  <text x="400" y="70" text-anchor="middle" font-family="Arial Black,Arial" font-size="44" fill="#16324F">AYAM GORENG</text>
+  <text x="400" y="110" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#4068AC">POKYA — KOTA BHARU ORIGINAL</text>
 </svg>
