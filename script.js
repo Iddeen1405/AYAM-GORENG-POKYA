@@ -269,3 +269,35 @@ if (orderGrid) {
 
   renderCart();
 }
+
+// ===== Fire page transition =====
+(function () {
+  const overlay = document.createElement('div');
+  overlay.className = 'fire-transition';
+  overlay.setAttribute('aria-hidden', 'true');
+  let bg = document.createElement('div');
+  bg.className = 'fire-bg';
+  overlay.appendChild(bg);
+  for (let i = 0; i < 14; i++) {
+    const f = document.createElement('div');
+    f.className = 'flame';
+    f.style.setProperty('--x', (4 + Math.random() * 92) + '%');
+    f.style.setProperty('--s', (60 + Math.random() * 110) + 'px');
+    f.style.setProperty('--d', (0.9 + Math.random() * 0.7) + 's');
+    f.style.setProperty('--delay', (Math.random() * 0.45) + 's');
+    overlay.appendChild(f);
+  }
+  document.body.appendChild(overlay);
+
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:')) return;
+    if (a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    overlay.classList.add('active');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setTimeout(() => { window.location.href = href; }, reduce ? 60 : 750);
+  });
+})();

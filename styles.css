@@ -553,3 +553,34 @@ img { max-width: 100%; display: block; }
 .modal-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
 .modal-hint { font-size: .78rem; color: var(--muted); margin-top: 14px; text-align: center; }
 .modal-hint a { color: var(--blue); }
+
+/* ===== Fire page transition ===== */
+.fire-transition {
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none; overflow: hidden;
+}
+.fire-transition .fire-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 120%, rgba(247,127,0,.55), rgba(215,38,61,.35) 45%, transparent 75%);
+  opacity: 0; transition: opacity .5s;
+}
+.fire-transition.active .fire-bg { opacity: 1; }
+.fire-transition .flame {
+  position: absolute; bottom: -12vh; left: var(--x);
+  width: var(--s); height: var(--s);
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(circle at 50% 75%, #FFD100 0%, #F77F00 45%, #D7263D 80%, transparent 100%);
+  filter: blur(6px);
+  opacity: 0;
+  transform: translateY(0) scale(.6);
+}
+.fire-transition.active .flame {
+  animation: flameRise var(--d) ease-out forwards;
+  animation-delay: var(--delay);
+}
+@keyframes flameRise {
+  0%   { opacity: 0; transform: translateY(0) scale(.5) rotate(-4deg); }
+  15%  { opacity: 1; }
+  60%  { opacity: .9; transform: translateY(-55vh) scale(1) rotate(3deg); }
+  100% { opacity: 0; transform: translateY(-115vh) scale(.7) rotate(-3deg); }
+}
