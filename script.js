@@ -270,41 +270,38 @@ if (orderGrid) {
   renderCart();
 }
 
-// ===== Fire page transition =====
+// ===== Hand swipe page transition (A&W style) =====
 (function () {
-  const overlay = document.createElement('div');
-  overlay.className = 'fire-transition';
-  overlay.setAttribute('aria-hidden', 'true');
-  let bg = document.createElement('div');
-  bg.className = 'fire-bg';
-  overlay.appendChild(bg);
-  for (let i = 0; i < 14; i++) {
-    const f = document.createElement('div');
-    f.className = 'flame';
-    f.style.setProperty('--x', (4 + Math.random() * 92) + '%');
-    f.style.setProperty('--s', (60 + Math.random() * 110) + 'px');
-    f.style.setProperty('--d', (1.8 + Math.random() * 0.8) + 's');
-    f.style.setProperty('--delay', (Math.random() * 0.6) + 's');
-    overlay.appendChild(f);
+  const wipe = document.createElement('div');
+  wipe.className = 'hand-wipe';
+  wipe.setAttribute('aria-hidden', 'true');
+  wipe.innerHTML = `
+    <div class="wipe-panel">
+      <div class="wipe-hand">
+        <svg viewBox="0 0 220 240" width="190" height="207">
+          <rect x="60" y="180" width="70" height="52" rx="12" fill="#4068AC" stroke="#16324F" stroke-width="5"/>
+          <path d="M78 180 v52 M104 180 v52" stroke="#2F4D7F" stroke-width="5"/>
+          <rect x="66" y="118" width="130" height="86" rx="34" fill="#fff" stroke="#16324F" stroke-width="5"/>
+          <rect x="52" y="96" width="34" height="76" rx="17" fill="#fff" stroke="#16324F" stroke-width="5" transform="rotate(-28 69 134)"/>
+          <rect x="92"  y="14" width="26" height="102" rx="13" fill="#fff" stroke="#16324F" stroke-width="5" transform="rotate(-4 105 65)"/>
+          <rect x="124" y="8"  width="26" height="110" rx="13" fill="#fff" stroke="#16324F" stroke-width="5"/>
+          <rect x="156" y="14" width="26" height="102" rx="13" fill="#fff" stroke="#16324F" stroke-width="5" transform="rotate(4 169 65)"/>
+          <rect x="186" y="34" width="24" height="80" rx="12" fill="#fff" stroke="#16324F" stroke-width="5" transform="rotate(10 198 74)"/>
+        </svg>
+      </div>
+    </div>`;
+  document.body.appendChild(wipe);
+
+  // If arriving from a transition, sweep the panel off to reveal the page
+  if (sessionStorage.getItem('pokya_wipe') === '1') {
+    sessionStorage.removeItem('pokya_wipe');
+    requestAnimationFrame(() => {
+      wipe.classList.add('cover');
+      void wipe.offsetHeight; // force reflow so cover state paints
+      requestAnimationFrame(() => wipe.classList.add('exit'));
+      wipe.addEventListener('transitionend', () => wipe.remove(), { once: true });
+    });
   }
-  // Cartoon chicken mascot
-  const chicken = document.createElement('div');
-  chicken.className = 'fire-chicken';
-  chicken.innerHTML = `<svg viewBox="0 0 100 100" width="96" height="96">
-    <ellipse cx="38" cy="62" rx="26" ry="22" fill="#FFC53D"/>
-    <ellipse cx="38" cy="62" rx="26" ry="22" fill="none" stroke="#C97B12" stroke-width="3"/>
-    <path d="M20 52 q18-12 36 0 M18 64 q20-12 40 0" stroke="#C97B12" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".7"/>
-    <rect x="58" y="50" width="30" height="11" rx="5.5" fill="#F4E3C1" transform="rotate(-18 73 55)"/>
-    <circle cx="86" cy="46" r="9" fill="#F4E3C1"/>
-    <circle cx="34" cy="56" r="4" fill="#16324F"/><circle cx="47" cy="56" r="4" fill="#16324F"/>
-    <circle cx="35.5" cy="54.5" r="1.4" fill="#fff"/><circle cx="48.5" cy="54.5" r="1.4" fill="#fff"/>
-    <path d="M36 66 q5 5 10 0" stroke="#16324F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <rect x="28" y="82" width="7" height="12" rx="3.5" fill="#F4E3C1" transform="rotate(10 31 88)"/>
-    <rect x="44" y="82" width="7" height="12" rx="3.5" fill="#F4E3C1" transform="rotate(-8 47 88)"/>
-    <path d="M14 40 q-8 -10 -4 -18 M22 34 q-6 -12 0 -20" stroke="#FFD100" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
-  </svg>`;
-  overlay.appendChild(chicken);
-  document.body.appendChild(overlay);
 
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href]');
@@ -313,8 +310,9 @@ if (orderGrid) {
     if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto:')) return;
     if (a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey) return;
     e.preventDefault();
-    overlay.classList.add('active');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    setTimeout(() => { window.location.href = href; }, reduce ? 150 : 1700);
+    sessionStorage.setItem('pokya_wipe', '1');
+    wipe.classList.add('cover');
+    setTimeout(() => { window.location.href = href; }, reduce ? 120 : 1000);
   });
 })();
