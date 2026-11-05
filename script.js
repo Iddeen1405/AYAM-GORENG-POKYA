@@ -113,3 +113,144 @@ if (lightbox && lightboxImg) {
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 }
+
+// ===== Order cart (menu page only) =====
+const orderGrid = document.getElementById('orderGrid');
+if (orderGrid) {
+  const CART_KEY = 'pokya_cart';
+  let cart = [];
+  try { cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { cart = []; }
+
+  const cartFab = document.getElementById('cartFab');
+  const cartCount = document.getElementById('cartCount');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const cartOverlay = document.getElementById('cartOverlay');
+  const cartItemsEl = document.getElementById('cartItems');
+  const cartTotalEl = document.getElementById('cartTotal');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const clearCartBtn = document.getElementById('clearCart');
+  const cartClose = document.getElementById('cartClose');
+  const modal = document.getElementById('checkoutModal');
+  const modalClose = document.getElementById('modalClose');
+  const orderSummary = document.getElementById('orderSummary');
+  const sendOrderBtn = document.getElementById('sendOrder');
+  const copyOrderBtn = document.getElementById('copyOrder');
+  const custName = document.getElementById('custName');
+  const orderNotes = document.getElementById('orderNotes');
+
+  const fmt = n => 'RM ' + n.toFixed(2);
+  const save = () => localStorage.setItem(CART_KEY, JSON.stringify(cart));
+
+  function cartQty() { return cart.reduce((s, i) => s + i.qty, 0); }
+
+  function renderCart() {
+    cartCount.textContent = cartQty();
+    if (!cart.length) {
+      cartItemsEl.innerHTML = '<p class="cart-empty">Your cart is empty.<br>Add something tasty!</p>';
+    } else {
+      cartItemsEl.innerHTML = cart.map((i, idx) => `
+        <div class="cart-item">
+          <img src="${i.img}" alt="${i.name}">
+          <div class="cart-item-info">
+            <h4>${i.name}</h4>
+            <span class="ci-price">${fmt(i.price)}</span>
+          </div>
+          <div class="qty-ctrl">
+            <button data-idx="${idx}" data-d="-1" aria-label="Decrease">&minus;</button>
+            <span>${i.qty}</span>
+            <button data-idx="${idx}" data-d="1" aria-label="Increase">+</button>
+          </div>
+          <button class="ci-remove" data-idx="${idx}" aria-label="Remove">&times;</button>
+        </div>`).join('');
+    }
+    cartTotalEl.textContent = fmt(cart.reduce((s, i) => s + i.price * i.qty, 0));
+  }
+
+  function openCart() { cartDrawer.classList.add('open'); cartOverlay.classList.add('open'); cartDrawer.setAttribute('aria-hidden', 'false'); }
+  function closeCart() { cartDrawer.classList.remove('open'); cartOverlay.classList.remove('open'); cartDrawer.setAttribute('aria-hidden', 'true'); }
+  function openModal() { closeCart(); renderSummary(); modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); }
+  function closeModal() { modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true'); }
+
+  orderGrid.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('.product-card');
+      const item = {
+        id: card.dataset.id, name: card.dataset.name,
+        price: +card.dataset.price, img: card.dataset.img, qty: 1
+      };
+      const found = cart.find(i => i.id === item.id);
+      if (found) found.qty++; else cart.push(item);
+      save(); renderCart();
+      cartFab.style.transform = 'scale(1.15)';
+      setTimeout(() => cartFab.style.transform = '', 200);
+    });
+  });
+
+  cartItemsEl.addEventListener('click', e => {
+    const t = e.target.closest('button');
+    if (!t) return;
+    const idx = +t.dataset.idx;
+    if (t.classList.contains('ci-remove')) cart.splice(idx, 1);
+    else if (t.dataset.d) {
+      cart[idx].qty += +t.dataset.d;
+      if (cart[idx].qty <= 0) cart.splice(idx, 1);
+    }
+    save(); renderCart();
+  });
+
+  cartFab.addEventListener('click', openCart);
+  cartClose.addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', closeCart);
+  checkoutBtn.addEventListener('click', () => { if (cart.length) openModal(); });
+  clearCartBtn.addEventListener('click', () => { cart = []; save(); renderCart(); });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeCart(); closeModal(); }
+  });
+
+  function orderText() {
+    const name = custName.value.trim() || 'Customer';
+    const lines = cart.map(i => `${i.qty}x ${i.name} — ${fmt(i.price * i.qty)}`);
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    return `NEW ORDER — Ayam Goreng Pokya\nName: ${name}\n\n${lines.join('\n')}\n\nTotal: ${fmt(total)}\nNotes: ${orderNotes.value.trim() || '-'}`;
+  }
+
+  function renderSummary() {
+    const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+    orderSummary.innerHTML =
+      cart.map(i => `<div class="os-row"><span>${i.qty}x ${i.name}</span><span>${fmt(i.price * i.qty)}</span></div>`).join('') +
+      `<div class="os-row os-total"><span>Total</span><span>${fmt(total)}</span></div>`;
+  }
+
+  sendOrderBtn.addEventListener('click', () => {
+    const text = encodeURIComponent(orderText());
+    navigator.clipboard?.writeText(orderText()).catch(() => {});
+    window.open('https://www.facebook.com', '_blank');
+    cart = []; save(); renderCart(); closeModal();
+    custName.value = ''; orderNotes.value = '';
+  });
+  copyOrderBtn.addEventListener('click', () => {
+    navigator.clipboard?.writeText(orderText()).then(() => {
+      copyOrderBtn.textContent = 'Copied!';
+      setTimeout(() => copyOrderBtn.textContent = 'Copy Order Text', 1500);
+    });
+  });
+
+  // Category filter
+  const catTabs = document.getElementById('catTabs');
+  if (catTabs) {
+    catTabs.addEventListener('click', e => {
+      const tab = e.target.closest('.cat-tab');
+      if (!tab) return;
+      catTabs.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const cat = tab.dataset.cat;
+      orderGrid.querySelectorAll('.product-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      });
+    });
+  }
+
+  renderCart();
+}
