@@ -562,7 +562,7 @@ img { max-width: 100%; display: block; }
 .fire-transition .fire-bg {
   position: absolute; inset: 0;
   background: radial-gradient(ellipse at 50% 120%, rgba(247,127,0,.55), rgba(215,38,61,.35) 45%, transparent 75%);
-  opacity: 0; transition: opacity .5s;
+  opacity: 0; transition: opacity .9s;
 }
 .fire-transition.active .fire-bg { opacity: 1; }
 .fire-transition .flame {
@@ -593,7 +593,7 @@ img { max-width: 100%; display: block; }
   filter: drop-shadow(0 6px 12px rgba(0,0,0,.3));
 }
 .fire-transition.active .fire-chicken {
-  animation: chickenDash .8s cubic-bezier(.3,.6,.4,1) forwards;
+  animation: chickenDash 1.6s cubic-bezier(.3,.6,.4,1) forwards;
 }
 @keyframes chickenDash {
   0%   { opacity: 0; transform: translateX(-12vw) translateY(0) rotate(-8deg); }

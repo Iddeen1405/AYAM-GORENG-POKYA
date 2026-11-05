@@ -283,8 +283,8 @@ if (orderGrid) {
     f.className = 'flame';
     f.style.setProperty('--x', (4 + Math.random() * 92) + '%');
     f.style.setProperty('--s', (60 + Math.random() * 110) + 'px');
-    f.style.setProperty('--d', (0.9 + Math.random() * 0.7) + 's');
-    f.style.setProperty('--delay', (Math.random() * 0.45) + 's');
+    f.style.setProperty('--d', (1.8 + Math.random() * 0.8) + 's');
+    f.style.setProperty('--delay', (Math.random() * 0.6) + 's');
     overlay.appendChild(f);
   }
   // Cartoon chicken mascot
@@ -315,6 +315,6 @@ if (orderGrid) {
     e.preventDefault();
     overlay.classList.add('active');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    setTimeout(() => { window.location.href = href; }, reduce ? 60 : 750);
+    setTimeout(() => { window.location.href = href; }, reduce ? 150 : 1700);
   });
 })();
