@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayam Goreng Pokya — Best Fried Chicken Kota Bharu | Ayam Goreng Kelantan</title>
+  <meta name="description" content="Ayam Goreng Pokya — the original crispy fried chicken in Kota Bharu, Kelantan. Signature ayam goreng, combos, sides & daily specials. Order via Facebook.">
+  <meta name="keywords" content="Ayam Goreng Pokya, Ayam Goreng Kota Bharu, Best Fried Chicken Kelantan, ayam goreng asli, ayam goreng Pok Ya">
+  <meta property="og:title" content="Ayam Goreng Pokya — Best Fried Chicken Kota Bharu">
+  <meta property="og:description" content="Crispy, hot & freshly cooked daily. Order your favorite ayam goreng combo today.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="logo">
+        <span class="logo-badge">AGP</span>
+        <span class="logo-text">Ayam Goreng <strong>Pokya</strong></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#menu">Our Menu</a>
+        <a href="#promotions">Promotions</a>
+        <a href="#about">About Us</a>
+        <a href="#findus">Find Us</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" class="nav-fb">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8v3h2.7v7h2.8z"/></svg>
+          Facebook Page
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero Slider ===== -->
+  <section class="hero" id="home">
+    <div class="slider" id="slider">
+      <!-- Slide 1 -->
+      <div class="slide active" data-bg="chicken">
+        <div class="slide-content">
+          <h1>Crispy. Hot. Pokya Original.</h1>
+          <p>The fried chicken that Kota Bharu can't get enough of.</p>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" class="btn btn-primary">Order via Facebook</a>
+        </div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="slide" data-bg="combo">
+        <div class="slide-content">
+          <h1>Family Combo Sets</h1>
+          <p>Feed the whole family — ayam, sides & drinks in one box.</p>
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide" data-bg="sides">
+        <div class="slide-content">
+          <h1>Local Sides & Add-ons</h1>
+          <p>Nasi impit, ulam & traditional Kelantan favourites.</p>
+          <a href="#menu" class="btn btn-primary">View Menu</a>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="slide" data-bg="promo">
+        <div class="slide-content">
+          <h1>Daily Specials</h1>
+          <p>Follow our Facebook page for today's promotions.</p>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" class="btn btn-primary">Order via Facebook</a>
+        </div>
+      </div>
+      <!-- Slide 5 -->
+      <div class="slide" data-bg="stall">
+        <div class="slide-content">
+          <h1>Visit Our Stall</h1>
+          <p>Find us in the heart of Kota Bharu.</p>
+          <a href="#findus" class="btn btn-primary">Find Us</a>
+        </div>
+      </div>
+
+      <button class="slider-arrow prev" id="prevSlide" aria-label="Previous slide">&#10094;</button>
+      <button class="slider-arrow next" id="nextSlide" aria-label="Next slide">&#10095;</button>
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </section>
+
+  <!-- ===== Animated Selling Points ===== -->
+  <section class="features">
+    <div class="container">
+      <div class="feature-grid">
+        <div class="feature-card float-1">
+          <div class="feature-icon steam-pot">
+            <svg viewBox="0 0 64 64" width="72" height="72" fill="none">
+              <path d="M14 30h36v18a6 6 0 0 1-6 6H20a6 6 0 0 1-6-6V30z" fill="#4068AC"/>
+              <rect x="10" y="26" width="44" height="6" rx="3" fill="#2F4D7F"/>
+              <path d="M22 26c0-6 4-10 4-14M32 26c0-6 4-10 4-14M42 26c0-6 4-10 4-14" stroke="#FFD100" stroke-width="3" stroke-linecap="round" class="steam-line"/>
+            </svg>
+          </div>
+          <h3>Crispy &amp; Hot</h3>
+          <p>Fried fresh to order, served piping hot every time.</p>
+        </div>
+        <div class="feature-card float-2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 64 64" width="72" height="72" fill="none">
+              <path d="M32 8c10 0 18 8 18 18 0 12-8 22-18 30C22 48 14 38 14 26c0-10 8-18 18-18z" fill="#4068AC"/>
+              <path d="M24 28c2-6 6-10 8-10s6 4 8 10" stroke="#FFD100" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Original KB Recipe</h3>
+          <p>The secret marinade passed down through generations.</p>
+        </div>
+        <div class="feature-card float-3">
+          <div class="feature-icon">
+            <svg viewBox="0 0 64 64" width="72" height="72" fill="none">
+              <circle cx="32" cy="32" r="22" fill="#4068AC"/>
+              <path d="M20 33l8 8 16-16" stroke="#FFD100" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Freshly Cooked Daily</h3>
+          <p>Never frozen, never reheated — only ever fresh.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Menu ===== -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <h2 class="section-title">Our Menu</h2>
+      <p class="section-sub">Signature ayam goreng and local favourites</p>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="menu-img m1"><span>Ayam Goreng</span></div>
+          <h4>Ayam Goreng Pokya</h4>
+          <p>The original. Marinated overnight, fried to golden perfection.</p>
+          <span class="price">RM 12.90</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-img m2"><span>Combo Set</span></div>
+          <h4>Combo Ayam + Nasi + Ulam</h4>
+          <p>Chicken, steamed rice, local ulam & signature sauce.</p>
+          <span class="price">RM 15.90</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-img m3"><span>Family Pack</span></div>
+          <h4>Keluarga Pack (4-6 pax)</h4>
+          <p>Enough ayam goreng to go around, with sides & drinks.</p>
+          <span class="price">RM 58.00</span>
+        </div>
+        <div class="menu-item">
+          <div class="menu-img m4"><span>Sides</span></div>
+          <h4>Nasi Impit &amp; Ulam</h4>
+          <p>Kelantan's beloved compressed rice with sambal & ulam.</p>
+          <span class="price">RM 6.50</span>
+        </div>
+      </div>
+      <p class="menu-note">Prices are indicative — confirm today's menu & promos on our <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook page</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===== 3-Split Grid ===== -->
+  <section class="split-grid section" id="promotions">
+    <div class="container">
+      <div class="split">
+        <!-- Card 1: Featured Dish -->
+        <article class="split-card">
+          <span class="badge badge-yellow">Featured Dish of the Day</span>
+          <div class="dish-poster">
+            <svg viewBox="0 0 200 140" width="100%" aria-label="Ayam Goreng poster">
+              <rect width="200" height="140" fill="#D9E5FA"/>
+              <ellipse cx="100" cy="95" rx="55" ry="30" fill="#FFC107"/>
+              <ellipse cx="100" cy="88" rx="55" ry="30" fill="#E8A33D"/>
+              <path d="M70 80q30-20 60 0" stroke="#B06A1E" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <circle cx="72" cy="55" r="14" fill="#fff"/>
+              <rect x="66" y="50" width="12" height="8" rx="3" fill="#FFD100"/>
+              <path d="M88 60q10-12 22-4" stroke="#4068AC" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <path d="M110 52q12 8 8 22" stroke="#4068AC" stroke-width="6" fill="none" stroke-linecap="round"/>
+              <text x="100" y="25" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="700" font-size="14" fill="#2F4D7F">AYAM GORENG POKYA</text>
+            </svg>
+          </div>
+          <h3>Dish of the Day</h3>
+          <p id="dishName">Ayam Goreng Set + Teh O Ais</p>
+          <button class="btn btn-outline" id="shuffleDish">Shuffle Today's Pick</button>
+        </article>
+
+        <!-- Card 2: Facebook / Community -->
+        <article class="split-card">
+          <h3>Community &amp; Updates</h3>
+          <div class="fb-widget">
+            <div class="fb-placeholder">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="#4068AC"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8v3h2.7v7h2.8z"/></svg>
+              <p>Latest promos, opening hours & customer shoutouts — follow us on Facebook.</p>
+            </div>
+            <div class="reviews">
+              <blockquote>"Paling sedap ayam goreng kat KB! Balik hometown wajib singgah." <cite>— Aina, Kota Bharu</cite></blockquote>
+              <blockquote>"Crispy sampai tulang, sambalnya nampak sedap gila." <cite>— Hafiz, Bachok</cite></blockquote>
+            </div>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" class="btn btn-primary btn-block">Visit Facebook Page</a>
+          </div>
+        </article>
+
+        <!-- Card 3: Fun / Poll -->
+        <article class="split-card">
+          <h3>Hidang Sedap?</h3>
+          <p class="poll-question">Apa hidangan Pokya paling you suka?</p>
+          <div class="poll" id="poll">
+            <button class="poll-option" data-votes="42"><span>Ayam Goreng</span><div class="poll-bar"></div></button>
+            <button class="poll-option" data-votes="28"><span>Combo Set</span><div class="poll-bar"></div></button>
+            <button class="poll-option" data-votes="18"><span>Nasi Impit &amp; Ulam</span><div class="poll-bar"></div></button>
+            <button class="poll-option" data-votes="12"><span>Semua sedap!</span><div class="poll-bar"></div></button>
+          </div>
+          <p class="poll-total" id="pollTotal"></p>
+          <button class="btn btn-outline btn-block" id="resetPoll">Reset Poll</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== About / Find Us ===== -->
+  <section class="about section" id="about">
+    <div class="container about-wrap">
+      <div>
+        <h2 class="section-title">About Us</h2>
+        <p>Ayam Goreng Pokya is a family-run fried chicken brand born in Kota Bharu, Kelantan. What started as a humble stall recipe has become a local favourite — crispy skin, juicy meat, and a marinade perfected over years.</p>
+        <p>We fry fresh all day, every day. No shortcuts, no compromises.</p>
+      </div>
+      <div class="hours-card">
+        <h3>Opening Hours</h3>
+        <ul>
+          <li><span>Mon – Sat</span><span>10:00 AM – 10:00 PM</span></li>
+          <li><span>Sunday</span><span>10:00 AM – 9:00 PM</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="findus section" id="findus">
+    <div class="container">
+      <h2 class="section-title">Find Us</h2>
+      <p class="section-sub">Kota Bharu, Kelantan — look for the blue &amp; yellow sign</p>
+      <div class="map-placeholder">
+        <svg viewBox="0 0 600 260" width="100%" role="img" aria-label="Map placeholder">
+          <rect width="600" height="260" fill="#D9E5FA"/>
+          <path d="M0 180 Q150 140 300 170 T600 150 V260 H0 Z" fill="#b9cdec"/>
+          <path d="M80 0 V260 M240 0 V260 M420 0 V260" stroke="#fff" stroke-width="10"/>
+          <path d="M0 60 H600 M0 130 H600" stroke="#fff" stroke-width="6"/>
+          <circle cx="300" cy="120" r="18" fill="#FFD100" stroke="#2F4D7F" stroke-width="4"/>
+          <text x="300" y="126" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="14" fill="#2F4D7F">AGP</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Ayam Goreng Pokya. All rights reserved.</p>
+      <p>Kota Bharu, Kelantan &middot; <a href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a> &middot; <a href="#home">Back to top</a></p>
+    </div>
+  </footer>
+
+  <!-- Sticky mobile CTA -->
+  <a href="https://www.facebook.com" target="_blank" rel="noopener" class="sticky-fb">Find Us on Facebook</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
