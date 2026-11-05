@@ -42,11 +42,20 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero" id="home">
-    <div class="hero-media">
-      <video id="heroVideo" autoplay muted loop playsinline
-             poster="images/banners/hero-poster.jpg">
-        <source src="images/videos/pokya-promo.mp4" type="video/mp4">
-      </video>
+    <div class="hero-media" id="heroMedia">
+      <div class="hero-slide active">
+        <video autoplay muted loop playsinline poster="images/banners/hero-poster.jpg">
+          <source src="images/videos/pokya-promo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-slide">
+        <video muted loop playsinline poster="images/promotions/promo-lto.jpg">
+          <source src="images/videos/pokya-frying.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-slide">
+        <img src="images/promotions/promo-deals.jpg" alt="Ayam Goreng Pokya deals promotion">
+      </div>
       <img src="images/banners/hero-poster.jpg" alt="Ayam Goreng Pokya fried chicken" class="hero-fallback">
       <div class="hero-overlay"></div>
     </div>

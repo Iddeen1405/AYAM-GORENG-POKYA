@@ -19,16 +19,31 @@ if (toggle && menu) {
   );
 }
 
-// ===== Hero video fallback (home only) =====
-const video = document.getElementById('heroVideo');
-if (video) {
-  video.addEventListener('error', () => video.style.display = 'none');
-  video.addEventListener('loadeddata', () => {
-    if (video.videoWidth === 0) video.style.display = 'none';
+// ===== Hero promo slider =====
+const heroMedia = document.getElementById('heroMedia');
+if (heroMedia) {
+  const heroSlides = heroMedia.querySelectorAll('.hero-slide');
+  let heroIdx = 0;
+  function showHeroSlide(i) {
+    heroSlides.forEach((s, j) => {
+      const active = j === i;
+      s.classList.toggle('active', active);
+      const v = s.querySelector('video');
+      if (v) {
+        if (active) v.play().catch(() => {});
+        else v.pause();
+      }
+    });
+  }
+  heroSlides.forEach(s => {
+    const v = s.querySelector('video');
+    if (v) v.addEventListener('error', () => s.style.display = 'none');
   });
-  setTimeout(() => {
-    if (video.readyState === 0 && video.networkState === 3) video.style.display = 'none';
-  }, 2500);
+  setInterval(() => {
+    heroIdx = (heroIdx + 1) % heroSlides.length;
+    showHeroSlide(heroIdx);
+  }, 6000);
+  showHeroSlide(0);
 }
 
 // ===== Scroll reveal =====
