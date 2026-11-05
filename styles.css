@@ -584,3 +584,22 @@ img { max-width: 100%; display: block; }
   60%  { opacity: .9; transform: translateY(-55vh) scale(1) rotate(3deg); }
   100% { opacity: 0; transform: translateY(-115vh) scale(.7) rotate(-3deg); }
 }
+
+/* ===== Cartoon chicken transition ===== */
+.fire-chicken {
+  position: absolute; bottom: 5vh; left: 0;
+  width: 96px; z-index: 2;
+  opacity: 0;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,.3));
+}
+.fire-transition.active .fire-chicken {
+  animation: chickenDash .8s cubic-bezier(.3,.6,.4,1) forwards;
+}
+@keyframes chickenDash {
+  0%   { opacity: 0; transform: translateX(-12vw) translateY(0) rotate(-8deg); }
+  10%  { opacity: 1; }
+  30%  { transform: translateX(30vw) translateY(-9vh) rotate(6deg); }
+  55%  { transform: translateX(60vw) translateY(0) rotate(-5deg); }
+  80%  { transform: translateX(88vw) translateY(-6vh) rotate(5deg); }
+  100% { opacity: 0; transform: translateX(115vw) translateY(0) rotate(-4deg); }
+}

@@ -287,6 +287,23 @@ if (orderGrid) {
     f.style.setProperty('--delay', (Math.random() * 0.45) + 's');
     overlay.appendChild(f);
   }
+  // Cartoon chicken mascot
+  const chicken = document.createElement('div');
+  chicken.className = 'fire-chicken';
+  chicken.innerHTML = `<svg viewBox="0 0 100 100" width="96" height="96">
+    <ellipse cx="38" cy="62" rx="26" ry="22" fill="#FFC53D"/>
+    <ellipse cx="38" cy="62" rx="26" ry="22" fill="none" stroke="#C97B12" stroke-width="3"/>
+    <path d="M20 52 q18-12 36 0 M18 64 q20-12 40 0" stroke="#C97B12" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".7"/>
+    <rect x="58" y="50" width="30" height="11" rx="5.5" fill="#F4E3C1" transform="rotate(-18 73 55)"/>
+    <circle cx="86" cy="46" r="9" fill="#F4E3C1"/>
+    <circle cx="34" cy="56" r="4" fill="#16324F"/><circle cx="47" cy="56" r="4" fill="#16324F"/>
+    <circle cx="35.5" cy="54.5" r="1.4" fill="#fff"/><circle cx="48.5" cy="54.5" r="1.4" fill="#fff"/>
+    <path d="M36 66 q5 5 10 0" stroke="#16324F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <rect x="28" y="82" width="7" height="12" rx="3.5" fill="#F4E3C1" transform="rotate(10 31 88)"/>
+    <rect x="44" y="82" width="7" height="12" rx="3.5" fill="#F4E3C1" transform="rotate(-8 47 88)"/>
+    <path d="M14 40 q-8 -10 -4 -18 M22 34 q-6 -12 0 -20" stroke="#FFD100" stroke-width="4" fill="none" stroke-linecap="round" opacity=".8"/>
+  </svg>`;
+  overlay.appendChild(chicken);
   document.body.appendChild(overlay);
 
   document.addEventListener('click', e => {
