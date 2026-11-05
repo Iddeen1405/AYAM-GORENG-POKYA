@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#1A1A1A"/>
+  <rect x="40" y="40" width="720" height="920" rx="30" fill="#2A2A2A"/>
+  <circle cx="400" cy="330" r="180" fill="#D7263D"/>
+  <circle cx="400" cy="330" r="180" fill="none" stroke="#FFC300" stroke-width="8" stroke-dasharray="20 14"/>
+  <text x="400" y="300" text-anchor="middle" font-family="Arial Black" font-size="46" fill="#fff">HEBAH</text>
+  <text x="400" y="365" text-anchor="middle" font-family="Arial Black" font-size="110" fill="#FFC300">20%</text>
+  <text x="400" y="430" text-anchor="middle" font-family="Arial Black" font-size="40" fill="#fff">DISKAUN</text>
+  <!-- chicken silhouette -->
+  <ellipse cx="330" cy="620" rx="70" ry="50" fill="#FFC53D"/>
+  <ellipse cx="330" cy="620" rx="70" ry="50" fill="none" stroke="#C97B12" stroke-width="5"/>
+  <ellipse cx="470" cy="640" rx="80" ry="56" fill="#FFC53D"/>
+  <ellipse cx="470" cy="640" rx="80" ry="56" fill="none" stroke="#C97B12" stroke-width="5"/>
+  <path d="M440 615 q35-20 70 0" stroke="#C97B12" stroke-width="4" fill="none"/>
+  <rect x="545" y="622" width="45" height="14" rx="7" fill="#F4E3C1"/>
+  <text x="400" y="780" text-anchor="middle" font-family="Arial" font-size="24" font-weight="bold" fill="#FFF6E9">AYAM GORENG POKYA</text>
+  <text x="400" y="830" text-anchor="middle" font-family="Arial" font-size="20" fill="#FFC300">*Tertakluk pada terma &amp; syarat. Hubungi Facebook page kami.</text>
+  <rect x="230" y="880" width="340" height="60" rx="30" fill="#D7263D"/>
+  <text x="400" y="918" text-anchor="middle" font-family="Arial Black" font-size="24" fill="#fff">SEHINGGA 30 NOV</text>
+</svg>

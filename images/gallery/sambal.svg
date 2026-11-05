@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <rect width="600" height="400" fill="#FFF6E9"/>
+  <!-- sambal bowl -->
+  <ellipse cx="300" cy="300" rx="190" ry="70" fill="#fff"/>
+  <ellipse cx="300" cy="290" rx="170" ry="58" fill="#D7263D"/>
+  <ellipse cx="300" cy="285" rx="170" ry="55" fill="#E8590C"/>
+  <circle cx="240" cy="280" r="14" fill="#7FB069"/><circle cx="330" cy="275" r="12" fill="#FFC300"/><circle cx="390" cy="290" r="10" fill="#7FB069"/>
+  <text x="300" y="90" text-anchor="middle" font-family="Arial Black" font-size="26" fill="#1A1A1A">SAMBAL &amp; ULAM</text>
+  <text x="300" y="120" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#D7263D">PEDAS SEDAP KAMPUNG</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D7263D"/><stop offset="55%" stop-color="#E8590C"/><stop offset="100%" stop-color="#FFC300"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <!-- burst rays -->
+  <g stroke="#fff" stroke-width="6" opacity=".25">
+    <path d="M400 480 L120 -60 M400 480 L320 -40 M400 480 L480 -50 M400 480 L640 -60 M400 480 L-40 180 M400 480 L1040 180 M400 480 L-80 480 M400 480 L880 480"/>
+  </g>
+  <ellipse cx="400" cy="470" rx="190" ry="140" fill="#fff" opacity=".92"/>
+  <!-- simple chicken -->
+  <ellipse cx="350" cy="430" rx="75" ry="55" fill="#FFC53D"/>
+  <ellipse cx="350" cy="430" rx="75" ry="55" fill="none" stroke="#C97B12" stroke-width="6"/>
+  <path d="M310 410 q40-22 80 0 M305 432 q42-24 84 0" stroke="#C97B12" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="470" cy="480" rx="85" ry="60" fill="#FFC53D"/>
+  <ellipse cx="470" cy="480" rx="85" ry="60" fill="none" stroke="#C97B12" stroke-width="6"/>
+  <path d="M428 458 q42-24 84 0 M424 482 q44-26 88 0" stroke="#C97B12" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="540" y="460" width="50" height="16" rx="8" fill="#F4E3C1"/>
+  <circle cx="588" cy="468" r="12" fill="#F4E3C1"/>
+  <text x="400" y="140" text-anchor="middle" font-family="Arial Black" font-size="64" fill="#1A1A1A">COMBO</text>
+  <text x="400" y="215" text-anchor="middle" font-family="Arial Black" font-size="52" fill="#fff" stroke="#1A1A1A" stroke-width="2">RM 15.90</text>
+  <text x="400" y="265" text-anchor="middle" font-family="Arial" font-size="26" font-weight="bold" fill="#1A1A1A">AYAM + NASI + ULAM</text>
+  <rect x="200" y="720" width="400" height="90" rx="45" fill="#1A1A1A"/>
+  <text x="400" y="778" text-anchor="middle" font-family="Arial Black" font-size="34" fill="#FFC300">MESTI CUBA!</text>
+  <text x="400" y="905" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold" fill="#fff">AYAM GORENG POKYA • KOTA BHARU</text>
+</svg>
