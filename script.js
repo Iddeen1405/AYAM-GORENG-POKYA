@@ -278,15 +278,14 @@ if (orderGrid) {
   wipe.innerHTML = `
     <div class="wipe-panel">
       <div class="wipe-hand">
-        <svg viewBox="0 0 220 240" width="190" height="207">
-          <rect x="60" y="180" width="70" height="52" rx="12" fill="#4068AC" stroke="#16324F" stroke-width="5"/>
-          <path d="M78 180 v52 M104 180 v52" stroke="#2F4D7F" stroke-width="5"/>
-          <rect x="66" y="118" width="130" height="86" rx="34" fill="#fff" stroke="#16324F" stroke-width="5"/>
-          <rect x="52" y="96" width="34" height="76" rx="17" fill="#fff" stroke="#16324F" stroke-width="5" transform="rotate(-28 69 134)"/>
-          <rect x="92"  y="14" width="26" height="102" rx="13" fill="#fff" stroke="#16324F" stroke-width="5" transform="rotate(-4 105 65)"/>
-          <rect x="124" y="8"  width="26" height="110" rx="13" fill="#fff" stroke="#16324F" stroke-width="5"/>
-          <rect x="156" y="14" width="26" height="102" rx="13" fill="#fff" stroke="#16324F" stroke-width="5" transform="rotate(4 169 65)"/>
-          <rect x="186" y="34" width="24" height="80" rx="12" fill="#fff" stroke="#16324F" stroke-width="5" transform="rotate(10 198 74)"/>
+        <svg viewBox="0 0 220 160" width="230" height="167">
+          <rect x="168" y="52" width="46" height="16" rx="8" fill="#F4E3C1" transform="rotate(-24 191 60)"/>
+          <circle cx="204" cy="44" r="15" fill="#F4E3C1"/>
+          <ellipse cx="105" cy="85" rx="88" ry="62" fill="#FFC53D"/>
+          <ellipse cx="105" cy="85" rx="88" ry="62" fill="none" stroke="#C97B12" stroke-width="6"/>
+          <path d="M45 60 q60-32 120 0 M38 88 q66-36 134 0 M48 116 q56-30 114 0" stroke="#C97B12" stroke-width="5" fill="none" stroke-linecap="round" opacity=".7"/>
+          <circle cx="105" cy="85" r="10" fill="#fff" opacity=".35"/>
+          <path d="M70 30 q10 -14 4 -26 M95 24 q10 -14 4 -26 M120 24 q10 -14 4 -26" stroke="#FFD100" stroke-width="5" fill="none" stroke-linecap="round" opacity=".9"/>
         </svg>
       </div>
     </div>`;
