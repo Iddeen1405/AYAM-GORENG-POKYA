@@ -26,6 +26,30 @@ img { max-width: 100%; display: block; }
 .container { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
 .section { padding: 84px 0; }
 
+/* ===== Inner page hero ===== */
+.page-hero {
+  position: relative; height: 56vh; min-height: 380px;
+  display: flex; align-items: flex-end; color: #fff; overflow: hidden;
+}
+.page-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.page-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(22,50,79,.45) 0%, rgba(22,50,79,.92) 100%);
+}
+.page-hero-content { position: relative; z-index: 2; padding: 130px 22px 44px; width: 100%; }
+.page-hero-content h1 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.4rem); text-transform: uppercase; line-height: 1.05;
+}
+.page-hero-content p { color: var(--blue-light); margin-top: 10px; font-size: 1.05rem; max-width: 560px; }
+.page-hero-content .hl { color: var(--yellow); }
+
+/* ===== Promo grid (promotions page) ===== */
+.promo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.promo-grid .promo-slide { flex: none; }
+@media (max-width: 900px) { .promo-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .promo-grid { grid-template-columns: 1fr; } }
+
 /* ===== Buttons ===== */
 .btn {
   display: inline-block;
